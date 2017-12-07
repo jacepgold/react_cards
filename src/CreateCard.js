@@ -22,8 +22,8 @@ class CreateCard extends React.Component {
     const { name, answer } = this.state;
     return(
       <form ref="form" onSubmit={this.handleSubmit}>
-        <input name="name" value={name} onChange={this.handleChange} autofocus='true' />
-        <input name="answer" value={answer} onChange={this.handleChange} />
+        <input name="name" value={name} onChange={this.handleChange} placeholder="Front of Card" autofocus='true' />
+        <input name="answer" value={answer} onChange={this.handleChange} placeholder="Back of Card" />
         <button type="submit">Create Card</button>
       </form>
     )
