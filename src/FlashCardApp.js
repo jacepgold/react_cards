@@ -42,6 +42,14 @@ class FlashCardApp extends React.Component {
     }
   }
 
+  deleteCard(card, id) {
+    delete this.state.cards[id];
+    var cardsArray = this.state.people;
+    var index = cardsArray(card.id);
+    cardsArray.splice(id, 1);
+    this.setState({ cards: cardsArray });;
+  }
+
   render() {
     return(
       <div>
@@ -52,7 +60,7 @@ class FlashCardApp extends React.Component {
               <h3><strong>{card.name}</strong></h3>
               { this.showAnswer(card, id) }
               <button>Edit Card</button>
-              <button>Delete Card</button>
+              <button onClick={() => this.deleteCard(card, id)}>Delete Card</button>
               <hr />
             </div>
           )
