@@ -27,7 +27,8 @@ class FlashCardApp extends React.Component {
     if (card.hidden) {
       return(
         <div>
-          <strong>Card is hidden</strong>
+          <strong>Answer is hidden</strong>
+          <br />
           <button onClick={() => this.toggleAnswer(id)}>Show Answer</button>
         </div>
       )
@@ -35,7 +36,8 @@ class FlashCardApp extends React.Component {
     else {
       return (
         <div>
-          <strong>Answer: {card.answer}</strong>
+          <strong>Answer is<br />{card.answer}</strong>
+          <br />
           <button onClick={() => this.toggleAnswer(id)}>Hide Answer</button>
         </div>
       )   
@@ -43,11 +45,7 @@ class FlashCardApp extends React.Component {
   }
 
   deleteCard(card, id) {
-    delete this.state.cards[id];
-    var cardsArray = this.state.people;
-    var index = cardsArray(card.id);
-    cardsArray.splice(id, 1);
-    this.setState({ cards: cardsArray });;
+    // Add delete stuffs
   }
 
   render() {
